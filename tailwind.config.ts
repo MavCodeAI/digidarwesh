@@ -66,8 +66,8 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Inter var', 'sans-serif'],
-				display: ['SF Pro Display', 'Inter var', 'sans-serif'],
+				sans: ['Poppins', 'sans-serif'],
+				display: ['Montserrat', 'Poppins', 'sans-serif'],
 				mono: ['Fira Code', 'monospace']
 			},
 			keyframes: {

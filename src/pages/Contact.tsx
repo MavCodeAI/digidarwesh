@@ -24,8 +24,8 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: 'Email',
-      details: 'info@digidarwesh.com',
-      action: 'mailto:info@digidarwesh.com'
+      details: 'abdulbasitdarwesh@gmail.com',
+      action: 'mailto:abdulbasitdarwesh@gmail.com'
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
