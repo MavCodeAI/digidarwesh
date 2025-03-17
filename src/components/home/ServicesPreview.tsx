@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, Cpu, Code, BarChart, Zap, Robot } from 'lucide-react';
+import { ArrowRight, Cpu, Code, BarChart, Zap, Bot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
@@ -63,7 +63,7 @@ const ServicesPreview = () => {
       description: "Create intelligent websites that learn from user behavior and adapt to provide personalized experiences."
     },
     {
-      icon: <Robot size={24} />,
+      icon: <Bot size={24} />,
       title: "Custom Chatbot Solutions",
       description: "Build sophisticated AI assistants that engage your customers 24/7 and streamline business operations."
     },

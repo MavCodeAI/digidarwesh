@@ -1,9 +1,8 @@
-
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import AnimatedBackground from '@/components/ui/AnimatedBackground';
 import { Card } from '@/components/ui/card';
-import { Cpu, Code, Robot, BarChart, Zap, Database } from 'lucide-react';
+import { Cpu, Code, Bot, BarChart, Zap, Database } from 'lucide-react';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -58,7 +57,6 @@ const Services = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   
-  // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -77,7 +75,7 @@ const Services = () => {
       ]
     },
     {
-      icon: <Robot size={32} />,
+      icon: <Bot size={32} />,
       title: "Custom Chatbot Solutions",
       description: "Build sophisticated AI assistants that engage your customers 24/7 and streamline business operations.",
       features: [
