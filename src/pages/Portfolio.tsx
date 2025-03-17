@@ -4,29 +4,59 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '@/utils/animations';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-// Sample portfolio data
+// Updated portfolio data with AI-generated image URLs
 const portfolioItems = [
   {
     id: 1,
-    title: 'AI-Powered E-commerce Platform',
-    description: 'A next-generation e-commerce platform with personalized recommendations, chatbot support, and dynamic content generation.',
-    tags: ['React', 'Node.js', 'AI', 'E-commerce'],
-    image: '/placeholder.svg'
+    title: 'Smart City Dashboard',
+    description: 'An intelligent dashboard for monitoring and optimizing city resources in real-time.',
+    tags: ['React', 'AI Analytics', 'IoT', 'Data Visualization'],
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    link: '/projects/smart-city'
   },
   {
     id: 2,
-    title: 'Virtual Assistant Dashboard',
-    description: 'An intelligent dashboard for monitoring and managing AI virtual assistants across multiple platforms.',
-    tags: ['Vue.js', 'Python', 'Machine Learning', 'Dashboard'],
-    image: '/placeholder.svg'
+    title: 'Neural Health Assistant',
+    description: 'AI-powered application that helps monitor patient health and provides personalized recommendations.',
+    tags: ['Vue.js', 'Python', 'Machine Learning', 'Healthcare'],
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    link: '/portfolio'
   },
   {
     id: 3,
-    title: 'Smart Content Management System',
-    description: 'A CMS that uses AI to suggest content improvements, optimize SEO, and personalize user experiences.',
-    tags: ['React', 'GraphQL', 'AI', 'CMS'],
-    image: '/placeholder.svg'
+    title: 'EcoSense Platform',
+    description: 'Smart environmental monitoring system that uses AI to predict and prevent ecological issues.',
+    tags: ['React', 'IoT', 'AI', 'Environmental'],
+    image: 'https://images.unsplash.com/photo-1623241899289-e9a64d6eb218?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    link: '/portfolio'
+  },
+  {
+    id: 4,
+    title: 'Intelligent Supply Chain',
+    description: 'AI-driven supply chain optimization platform that reduces waste and improves efficiency.',
+    tags: ['React', 'GraphQL', 'AI', 'Logistics'],
+    image: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    link: '/portfolio'
+  },
+  {
+    id: 5,
+    title: 'Predictive Maintenance System',
+    description: 'Industrial IoT platform that predicts equipment failures before they occur, saving costs and downtime.',
+    tags: ['Angular', 'Python', 'IoT', 'Manufacturing'],
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    link: '/portfolio'
+  },
+  {
+    id: 6,
+    title: 'AI-Powered Education Platform',
+    description: 'Personalized learning system that adapts to individual student needs and learning styles.',
+    tags: ['React', 'Node.js', 'AI', 'Education'],
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    link: '/portfolio'
   }
 ];
 
@@ -74,10 +104,22 @@ const Portfolio = () => {
                 <CardTitle className="text-xl mb-2">{item.title}</CardTitle>
                 <CardDescription className="text-muted-foreground mb-4">{item.description}</CardDescription>
               </CardContent>
-              <CardFooter className="flex flex-wrap gap-2">
-                {item.tags.map(tag => (
-                  <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary">{tag}</Badge>
-                ))}
+              <CardFooter className="flex flex-col items-start gap-4">
+                <div className="flex flex-wrap gap-2">
+                  {item.tags.map(tag => (
+                    <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary">{tag}</Badge>
+                  ))}
+                </div>
+                <Button 
+                  asChild
+                  variant="link" 
+                  className="p-0 h-auto text-primary flex items-center group/link"
+                >
+                  <Link to={item.link}>
+                    <span>View Project</span>
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+                  </Link>
+                </Button>
               </CardFooter>
             </Card>
           </motion.div>

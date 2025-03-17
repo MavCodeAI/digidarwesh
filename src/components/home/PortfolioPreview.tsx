@@ -21,15 +21,15 @@ const projects: Project[] = [
     title: "Smart City Dashboard",
     category: "AI Analytics Platform",
     description: "An intelligent dashboard for monitoring and optimizing city resources in real-time.",
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-    link: "/portfolio"
+    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    link: "/projects/smart-city"
   },
   {
     id: 2,
     title: "Neural Health Assistant",
     category: "Healthcare AI",
     description: "AI-powered application that helps monitor patient health and provides personalized recommendations.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     link: "/portfolio"
   },
   {
@@ -37,7 +37,7 @@ const projects: Project[] = [
     title: "EcoSense",
     category: "Environmental Technology",
     description: "Smart environmental monitoring system that uses AI to predict and prevent ecological issues.",
-    image: "https://images.unsplash.com/photo-1623241899289-e9a64d6eb218?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1623241899289-e9a64d6eb218?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     link: "/portfolio"
   }
 ];
