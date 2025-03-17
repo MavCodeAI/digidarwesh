@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,15 +29,45 @@
 
   * {
     @apply border-border selection:bg-primary/30 selection:text-white;
+    box-sizing: border-box;
   }
   
   body {
-    @apply bg-background text-foreground antialiased overflow-x-hidden;
+    @apply bg-background text-foreground antialiased overflow-x-hidden min-h-screen w-full;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    margin: 0;
+    padding: 0;
   }
 
   html {
     @apply scroll-smooth;
+  }
+
+  /* Ensure images behave responsively */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fix mobile padding and margins */
+  .container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 }
 
@@ -90,18 +121,23 @@
   .parallax-layer {
     will-change: transform;
   }
+  
+  /* New responsive utility classes */
+  .responsive-container {
+    @apply px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
+  }
+  
+  .responsive-padding {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20;
+  }
+  
+  .responsive-gap {
+    @apply gap-4 sm:gap-6 md:gap-8;
+  }
 }
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
-
-@font-face {
-  font-family: "SF Pro Display";
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff") format("woff");
-}
 
 /* Custom animation classes */
 .animate-delay-100 {
@@ -160,4 +196,17 @@
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 350ms, transform 350ms;
+}
+
+/* Fix for mobile responsiveness */
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

@@ -72,23 +72,24 @@ const Portfolio = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen container mx-auto py-20 px-4"
+      className="min-h-screen container mx-auto py-20 px-4 sm:px-6 lg:px-8"
     >
       <motion.div 
-        className="text-center mb-16"
+        className="text-center mb-12 md:mb-16"
         {...fadeIn('up', 0.2)}
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">Our Portfolio</h1>
-        <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-primary">Our Portfolio</h1>
+        <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
           Explore our innovative projects where we've combined cutting-edge technology with creative solutions.
         </p>
       </motion.div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {portfolioItems.map((item, index) => (
           <motion.div
             key={item.id}
             {...fadeIn('up', 0.2 + (index * 0.1))}
+            className="h-full"
           >
             <Card className="bg-card h-full hover:shadow-lg transition-all group overflow-hidden">
               <CardHeader className="p-0">
@@ -97,17 +98,18 @@ const Portfolio = () => {
                     src={item.image} 
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                 </div>
               </CardHeader>
               <CardContent className="pt-6">
-                <CardTitle className="text-xl mb-2">{item.title}</CardTitle>
-                <CardDescription className="text-muted-foreground mb-4">{item.description}</CardDescription>
+                <CardTitle className="text-lg md:text-xl mb-2">{item.title}</CardTitle>
+                <CardDescription className="text-muted-foreground mb-4 line-clamp-2">{item.description}</CardDescription>
               </CardContent>
               <CardFooter className="flex flex-col items-start gap-4">
                 <div className="flex flex-wrap gap-2">
                   {item.tags.map(tag => (
-                    <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary">{tag}</Badge>
+                    <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary text-xs">{tag}</Badge>
                   ))}
                 </div>
                 <Button 
@@ -115,7 +117,7 @@ const Portfolio = () => {
                   variant="link" 
                   className="p-0 h-auto text-primary flex items-center group/link"
                 >
-                  <Link to={item.link}>
+                  <Link to={item.link} className="flex items-center">
                     <span>View Project</span>
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
                   </Link>

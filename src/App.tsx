@@ -37,22 +37,26 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Navbar />
-        <AnimatePresence mode="wait">
-          <Suspense fallback={<Loading />}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/projects/smart-city" element={<SmartCity />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </AnimatePresence>
-        <Footer />
-        <ChatBot />
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <div className="flex-grow">
+            <AnimatePresence mode="wait">
+              <Suspense fallback={<Loading />}>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/portfolio" element={<Portfolio />} />
+                  <Route path="/projects/smart-city" element={<SmartCity />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </AnimatePresence>
+          </div>
+          <Footer />
+          <ChatBot />
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
